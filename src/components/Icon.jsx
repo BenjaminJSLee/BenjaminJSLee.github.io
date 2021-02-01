@@ -3,6 +3,10 @@ import './Icon.scss';
 
 // Preset icons used from https://simpleicons.org/
 const Icon = (props) => {
+  const width = props.width || "24px";
+  const height = props.height || "24px";
+  const svgWidth = props.svgWidth || "24";
+  const svgHeight = props.svgHeight || "24";
   const link = (
     (typeof props.github === "string" && props.github) ||
     (typeof props.linkedin === "string" && props.linkedin) ||
@@ -20,11 +24,13 @@ const Icon = (props) => {
     ) || ( props.svg )
   );
   return (
-    <a className="icon" target="_blank" rel="noreferrer" href={link}>
+    <a className="icon" target="_blank" rel="noreferrer" href={link}
+      style={{ width, height }}
+    >
         { 
           (
             props.svg && 
-            <svg viewBox="0 0 25 25">
+            <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
               {svgPath}
             </svg>
           ) || props.children

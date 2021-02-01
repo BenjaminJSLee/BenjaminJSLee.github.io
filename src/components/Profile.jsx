@@ -9,9 +9,15 @@ const Profile = (props) => {
     <div className="profile">
       <header>
         <div className="icons">
-          <Icon svg github="https://github.com/BenjaminJSLee" />
-          <Icon svg linkedin="https://www.linkedin.com/in/ben-lee-2a92871b1/" />
-          <Icon svg email="benjaminjslee@gmail.com" />
+          <Icon svg github="https://github.com/BenjaminJSLee" 
+            width="50px" height="50px"
+          />
+          <Icon svg linkedin="https://www.linkedin.com/in/ben-lee-2a92871b1/" 
+            width="50px" height="50px"
+          />
+          <Icon svg email="benjaminjslee@gmail.com" 
+            width="50px" height="50px"
+          />
         </div>
         <div className="profile-avatar-container"
           style={{background: `conic-gradient( ${color} 0%, black 25% 75%, ${color} 100%)`}}
