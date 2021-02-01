@@ -35,6 +35,13 @@
   }
 }
 
+.icon {
+  display: inline-flex;
+  width: 25px;
+  height: 25px;
+  margin: 0.5em;
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
