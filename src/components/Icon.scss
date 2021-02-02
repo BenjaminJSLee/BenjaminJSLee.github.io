@@ -7,6 +7,15 @@
     display: flex;
     width: 100%;
     height: 100%;
+    .gmail-logo {
+      fill: #EA4335;
+    }
+    .github-logo {
+      fill: #181717;
+    }
+    .linkedin-logo {
+      fill: #0077B5;
+    }
   }
   &:hover {
     filter: opacity(0.5);
