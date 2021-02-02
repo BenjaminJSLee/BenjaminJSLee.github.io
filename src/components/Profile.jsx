@@ -6,7 +6,7 @@ const Profile = (props) => {
   const color = props.color || "#ffffff";
 
   return (
-    <div className="profile">
+    <div className="profile" style={props.style || {}}>
       <header style={{background: `linear-gradient(90deg, #000000 2%, ${color} 2% 98%, #000000 98%)`}}>
         <div className="icons">
           <Icon svg logo="github" link="https://github.com/BenjaminJSLee" 
@@ -23,8 +23,10 @@ const Profile = (props) => {
           <img className="profile-avatar" alt="profile-pic" src={`${props.avatar}`} />
         </div>
       </header>
-      <h1 className="profile-name">{props.name}</h1>
-      <h2 className="profile-title">{props.title}</h2>
+      <footer>
+        <h1 className="profile-name">{props.name}</h1>
+        <h2 className="profile-title">{props.title}</h2>
+      </footer>
     </div>
   );
 };

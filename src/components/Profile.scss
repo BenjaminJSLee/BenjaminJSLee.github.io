@@ -5,8 +5,11 @@
   justify-content: center;
   align-items: center;
   padding: 1em;
+  border-radius: 0.2em;
   margin: auto;
-  background: #fff0f5;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background: linear-gradient(90deg, #eeeeee40 0%, #eeeeee88 3% 97%, #eeeeee40 100%);
   header {
     width: 100%;
     display: flex;
@@ -30,7 +33,7 @@
       border-radius: 100%;
       margin: 0.1em;
       animation: 5s 1s ease-in-out infinite running rotate;
-      background: conic-gradient( #ffffff88 0%, #000000 25% 75%, #ffffff88 100%);
+      background: radial-gradient(circle at top, #ffffff88 0% 5%, #000000 25%);
       .profile-avatar {
         animation: 5s 1s ease-in-out infinite reverse rotate;
         width: 100%;
@@ -41,15 +44,33 @@
       }
     }
   }
-  .profile-name {
-    font-size: 3em;
+  animation: 1s linear running appear;
+  footer {
+    background: linear-gradient( #000000 4%, #cfdfff 4% 96%, #000000 96%);
+    padding: 0.5em;
+    border-radius: 0.5em;
     margin-top: 1em;
-    padding: 0;
+    .profile-name {
+      font-size: 3em;
+      margin: 0;
+      margin-bottom: 0.1em;
+      padding: 0;
+    }
+    .profile-title {
+      font-size: 1em;
+      margin: 0;
+      margin-bottom: 0.5em;
+      padding: 0;
+    }
   }
-  .profile-title {
-    font-size: 1em;
-    margin: 0;
-    padding: 0;
+}
+
+@keyframes appear {
+  0% {
+    filter: opacity(0) blur(0.5em);
+  }
+  100% {
+    filter: opacity(1) blur(0.01em);
   }
 }
 
