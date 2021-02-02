@@ -9,13 +9,13 @@ const Profile = (props) => {
     <div className="profile">
       <header>
         <div className="icons">
-          <Icon svg github="https://github.com/BenjaminJSLee" 
+          <Icon svg logo="github" link="https://github.com/BenjaminJSLee" 
             width="50px" height="50px"
           />
-          <Icon svg linkedin="https://www.linkedin.com/in/ben-lee-2a92871b1/" 
+          <Icon svg logo="linkedin" link="https://www.linkedin.com/in/ben-lee-2a92871b1/" 
             width="50px" height="50px"
           />
-          <Icon svg email="benjaminjslee@gmail.com" 
+          <Icon svg logo="gmail" email="benjaminjslee@gmail.com" 
             width="50px" height="50px"
           />
         </div>
