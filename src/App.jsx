@@ -11,6 +11,7 @@ function App() {
         github="https://github.com/BenjaminJSLee"
         linkedin="https://www.linkedin.com/in/ben-lee-2a92871b1/"
         email="benjaminjslee@gmail.com"
+        color="#22bbff"
       />
     </div>
   );
