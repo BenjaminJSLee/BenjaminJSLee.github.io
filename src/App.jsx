@@ -1,9 +1,11 @@
 import './App.scss';
+import DynamicBackground from './components/DynamicBackground';
 import Profile from './components/Profile';
 
 function App() {
   return (
     <div className="application">
+      <DynamicBackground />
       <Profile
         name="Benjamin Lee"
         avatar="https://avatars.githubusercontent.com/u/49013733?s=460&u=fbf17ee4f03bd40c070f37520709f692fdaecba0&v=4"
