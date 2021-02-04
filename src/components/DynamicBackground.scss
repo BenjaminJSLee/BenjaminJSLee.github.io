@@ -18,13 +18,12 @@
     animation-iteration-count: infinite;
   }
   .satellites {
-    animation-delay: -12s;
     .sun, .moon {
       width: 100px;
       height: 100px;
       position: absolute;
       top: 50%;
-      left: -200px;
+      left: -100px;
       transform-origin: center center;
       animation-name: moveX, moveY;
       animation-duration: 86400s, 86400s;
@@ -33,24 +32,22 @@
     }
     .sun {
       fill: yellow;
-      animation-delay: 0s;
     }
     .moon {
       fill: white;
-      animation-delay: -6s;
     }
   }
 }
 
 @keyframes moveX {
   0% {
-    left: -200px;
+    left: -100px;
   }
   50% {
-    left: calc(100% + 100px);
+    left: 100%;
   }
   100% {
-    left: 110%;
+    left: 100%;
   }
 }
 
