@@ -7,8 +7,88 @@
   background: repeating-linear-gradient( #222222 0px 2px, transparent 2px 20px),
   repeating-linear-gradient( 90deg, #222222 0px 2px, transparent 2px 20px),
   steelblue;
+  background: black;
   .background-svg {
     width: 100%;
     height: 100%;
+    animation-name: skyColor;
+    animation-duration: 24s;//86400s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes skyColor {
+  4% {
+    background-color: #00000c; // rgba(0,0,12,0);
+  }
+  8% {
+    background-color: #020111; // rgba(2,1,17,0);
+  }
+  12% {
+    background-color: #020111; // rgba(2,1,17,0);
+  }
+  16% {
+    background-color: #020111; // rgba(2,1,17,0);
+  }
+  20% {
+    background-color: #20202c80; // rgba(32,32,44,0.5);
+  }
+  25% {
+    background-color: #40405ccb; // rgba(64,64,92,.8);
+  }
+  29% {
+    background-color: #4a4969; // rgb(74,73,105);
+  }
+  33% {
+    background-color: #757abf; // rgb(117,122,191);
+  }
+  37% {
+    background-color: #82addb; // rgb(130,173,219);
+  }
+  41% {
+    background-color: #94c5f8; // rgb(148,197,248);
+  }
+  45% {
+    background-color: #b7eaff; // rgb(183,234,255);
+  }
+  50% {
+    background-color: #90dffe; // rgb(144,223,254);
+  }
+  54% {
+    background-color: #57c1eb; // rgb(87,193,235);
+  }
+  58% {
+    background-color: #2d91c2; // rgb(45,145,194);
+  }
+  62% {
+    background-color: #2473ab; // rgb(36,115,171);
+  }
+  66% {
+    background-color: #1e528e; // rgb(30,82,142);
+  }
+  70% {
+    background-color: #1e528e; // rgb(30,82,142);
+  }
+  75% {
+    background-color: #154277; // rgb(21,66,119);
+  }
+  79% {
+    background-color: #163c52cb; // rgba(22,60,82,0.8);
+  }
+  83% {
+    background-color: #071b2680; // rgba(7,27,38,.5);
+  }
+  87% {
+    background-color: #010a104b; // rgba(1,10,16,.3);
+  }
+  91% {
+    background-color: #090401; // rgba(9,4,1,0);
+  }
+  95% {
+    background-color: #00000c; // rgba(0,0,12,0);
+  }
+  100% {
+    background-color: #00000c; // rgba(0,0,12,0);
   }
 }
