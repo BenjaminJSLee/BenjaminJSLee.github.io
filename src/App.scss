@@ -1,5 +1,12 @@
 .application {
-  text-align: center;
+  > header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 600px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
