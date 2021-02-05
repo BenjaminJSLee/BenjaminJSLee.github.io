@@ -1,9 +1,12 @@
+$bg-w: 1098px;
+$bg-h: 600px;
+
 .background {
   overflow: hidden;
   z-index: -1;
   position: absolute;
   top: 0;
-  width: 100%;
+  width: $bg-w;
   height: 100%;
   background: repeating-linear-gradient( #222222 0px 2px, transparent 2px 20px),
   repeating-linear-gradient( 90deg, #222222 0px 2px, transparent 2px 20px),
@@ -46,7 +49,7 @@
     width: 100%;
     height: 100%;
     .cloud {
-      fill: #ffffffaa;
+      fill: #fefefeee;
       position: absolute;
       display: flex;
       justify-content: stretch;
@@ -65,10 +68,10 @@
 
 @keyframes moveX {
   0% {
-    left: -100px;
+    transform: translateX(-100px);
   }
   100% {
-    left: 100%;
+    transform: translateX($bg-w) translateX(100px);
   }
 }
 

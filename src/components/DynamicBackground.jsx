@@ -7,22 +7,36 @@ const getCurrentTime = () => {
   return date.getTime() - day.getTime();
 };
 
-const generateCloud = (id, remove) => {
+const generateCloud = (id, removeCloud) => {
+  const clouds = [
+    (
+      <svg 
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox='0 0 100 100'
+      >
+        <path d='M 25,60 a 20,20 1 0,0 0,40 h 50 a 20,20 1 0,0 0,-40 a 10,10 1 0,0 -15,-10 a 15,15 1 0,0 -35,10  z' />
+      </svg>
+    ),
+    (
+      <div>Lorem, ipsum.</div>
+    ),
+  ];
   const style = {
     top: `${Math.floor(Math.random() * 41)}%`,
-    animationDuration: `${Math.floor(Math.random() * 5)  *10 + 20}s`,
+    animationDuration: `${Math.floor(Math.random() * 5) * 10 + 20}s`,
   };
+  const cloud = clouds[Math.floor(Math.random() * clouds.length)];
+  
   return (
-    <svg 
+    <div
       data-id={id}
       key={id}
       className="cloud" 
       style={style}
-      onAnimationEnd={() => remove(id)}
+      onAnimationEnd={() => removeCloud(id)}
     >
-      <circle cx="50" cy="50" r="50"/>
-      <circle cx="90" cy="50" r="50"/>
-    </svg>
+      {cloud}
+    </div>
   );
 };
 
@@ -32,6 +46,7 @@ const DynamicBackground = (props) => {
 
   useEffect(() => {
     let cloudId = 0;
+    setClouds([]);
     const updateClouds = () => {
       if (cloudId === Number.MAX_VALUE) cloudId = 0;
       cloudId += 1;
