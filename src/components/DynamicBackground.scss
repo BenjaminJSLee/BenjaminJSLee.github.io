@@ -40,6 +40,27 @@
       fill: white;
     }
   }
+  .clouds {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    .cloud {
+      fill: #ffffffaa;
+      position: absolute;
+      display: flex;
+      justify-content: stretch;
+      align-items: stretch;
+      width: 200px;
+      height: 100px;
+      top: 50%;
+      left: -100px;
+      animation-name: moveX;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+    }
+  }
 }
 
 @keyframes moveX {
