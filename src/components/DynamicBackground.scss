@@ -19,6 +19,9 @@
   }
   .satellites {
     .sun, .moon {
+      display: flex;
+      justify-content: stretch;
+      align-items: stretch;
       width: 100px;
       height: 100px;
       position: absolute;
