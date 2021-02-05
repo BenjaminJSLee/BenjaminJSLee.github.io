@@ -9,9 +9,8 @@ const getCurrentTime = () => {
 
 const generateCloud = (id, remove) => {
   const style = {
-    top: `${Math.floor(Math.random() * 51)}%`,
-    animationDuration: `${Math.floor(Math.random() * 51) + 40}s`,
-    animationPlayState: "running",
+    top: `${Math.floor(Math.random() * 41)}%`,
+    animationDuration: `${Math.floor(Math.random() * 5)  *10 + 20}s`,
   };
   return (
     <svg 

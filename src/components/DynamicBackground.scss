@@ -28,7 +28,7 @@
       top: 50%;
       left: -100px;
       transform-origin: center center;
-      animation-name: moveX, moveY;
+      animation-name: moveXSatellite, moveYSatellite;
       animation-duration: 86400s, 86400s;
       animation-timing-function: ease-in-out, ease-in-out;
       animation-iteration-count: infinite, infinite;
@@ -67,6 +67,15 @@
   0% {
     left: -100px;
   }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes moveXSatellite {
+  0% {
+    left: -100px;
+  }
   50% {
     left: 100%;
   }
@@ -75,7 +84,7 @@
   }
 }
 
-@keyframes moveY {
+@keyframes moveYSatellite {
   0% {
     top: 50%;
   }
