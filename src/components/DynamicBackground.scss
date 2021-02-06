@@ -57,21 +57,36 @@ $bg-h: 600px;
       width: 200px;
       height: 100px;
       top: 50%;
-      left: -100px;
-      animation-name: moveX;
-      animation-duration: 5s;
+      left: 0px;
+      animation-name: moveX, fade;
+      animation-duration: 5s, 5s;
       animation-timing-function: linear;
       animation-iteration-count: 1;
     }
   }
 }
 
-@keyframes moveX {
+@keyframes fade {
   0% {
-    transform: translateX(-100px);
+    filter: opacity(0.01);
+  }
+  10% {
+    filter: opacity(1);
+  }
+  90% {
+    filter: opacity(1);
   }
   100% {
-    transform: translateX($bg-w) translateX(100px);
+    filter: opacity(0.01);
+  }
+}
+
+@keyframes moveX {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX($bg-w) translateX(0px);
   }
 }
 

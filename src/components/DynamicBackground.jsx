@@ -18,7 +18,11 @@ const generateCloud = (id, removeCloud) => {
       </svg>
     ),
     (
-      <div>Lorem, ipsum.</div>
+      <svg 
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d='M 40, 30 A1,2 90 0,0 40,70 H 160 A1,2 90 0,0 160,30 Z' />
+      </svg>
     ),
   ];
   const style = {
@@ -42,7 +46,7 @@ const generateCloud = (id, removeCloud) => {
 
 const DynamicBackground = (props) => {
   const [clouds, setClouds] = useState([]);
-  const delay = getCurrentTime();
+  const [delay, setDelay] = useState(getCurrentTime());
 
   useEffect(() => {
     let cloudId = 0;
@@ -59,7 +63,7 @@ const DynamicBackground = (props) => {
         return [...prev, newCloud];
       });
     };
-    let interval = setInterval(updateClouds, 2000);
+    let interval = setInterval(updateClouds, 5000);
     const handleTabBlur = () => {
       clearInterval(interval);
       setClouds(prev => {
@@ -87,7 +91,7 @@ const DynamicBackground = (props) => {
           });
         });
       });
-      interval = setInterval(updateClouds, 2000);
+      interval = setInterval(updateClouds, 5000);
     };
     window.addEventListener("blur", handleTabBlur);
     window.addEventListener("focus", handleTabFocus);
