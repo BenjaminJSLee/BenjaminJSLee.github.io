@@ -1,67 +1,79 @@
 $bg-w: 1098px;
 $bg-h: 600px;
 
-.background {
+.background-container {
   overflow: hidden;
   z-index: -1;
   position: absolute;
   top: 0;
-  width: $bg-w;
+  width: 100%;
   height: 100%;
   background: repeating-linear-gradient( #222222 0px 2px, transparent 2px 20px),
   repeating-linear-gradient( 90deg, #222222 0px 2px, transparent 2px 20px),
   steelblue;
   background: #111155;
-  .background-svg {
+  .background {
     width: 100%;
     height: 100%;
     animation-name: skyColor;
-    animation-duration: 86400s;
+    animation-duration: 86400s; // seconds in a day
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-  }
-  .satellites {
-    .sun, .moon {
-      display: flex;
-      justify-content: stretch;
-      align-items: stretch;
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      top: 50%;
-      left: -100px;
-      transform-origin: center center;
-      animation-name: moveXSatellite, moveYSatellite;
-      animation-duration: 86400s, 86400s;
-      animation-timing-function: ease-in-out, ease-in-out;
-      animation-iteration-count: infinite, infinite;
-    }
-    .sun {
-      fill: yellow;
-    }
-    .moon {
-      fill: white;
-    }
-  }
-  .clouds {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    .cloud {
-      fill: #fefefeee;
-      position: absolute;
-      display: flex;
-      justify-content: stretch;
-      align-items: stretch;
-      width: 200px;
-      height: 100px;
-      top: 50%;
-      left: 0px;
-      animation-name: moveX, fade;
-      animation-duration: 5s, 5s;
-      animation-timing-function: linear;
-      animation-iteration-count: 1;
+    .background-svg {
+      position: relative;
+      width: 100%;
+      max-width: $bg-w;
+      height: 100%;
+      margin: auto;
+      .satellites {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        .sun, .moon {
+          display: flex;
+          justify-content: stretch;
+          align-items: stretch;
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          top: 50%;
+          left: -100px;
+          transform-origin: center center;
+          animation-name: moveXSatellite, moveYSatellite;
+          animation-duration: 86400s, 86400s; // seconds in a day
+          animation-timing-function: ease-in-out, ease-in-out;
+          animation-iteration-count: infinite, infinite;
+        }
+        .sun {
+          fill: yellow;
+        }
+        .moon {
+          fill: white;
+        }
+      }
+      .clouds {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        .cloud {
+          fill: #fefefeee;
+          position: absolute;
+          display: flex;
+          justify-content: stretch;
+          align-items: stretch;
+          width: 200px;
+          height: 100px;
+          top: 50%;
+          left: 0px;
+          animation-name: moveX, fade;
+          animation-duration: 5s, 5s;
+          animation-timing-function: linear;
+          animation-iteration-count: 1;
+        }
+      }
     }
   }
 }
@@ -86,7 +98,7 @@ $bg-h: 600px;
     transform: translateX(0px);
   }
   100% {
-    transform: translateX($bg-w) translateX(0px);
+    transform: translateX($bg-w);
   }
 }
 
@@ -104,16 +116,16 @@ $bg-h: 600px;
 
 @keyframes moveYSatellite {
   0% {
-    top: 50%;
+    top: 100%;
   }
   25% {
     top: 5%;
   }
   50% {
-    top: 50%;
+    top: 100%;
   }
   100% {
-    top: 50%;
+    top: 100%;
   }
 }
 

@@ -103,19 +103,21 @@ const DynamicBackground = (props) => {
   },[]);
 
   return (
-    <div className="background" style={props.style}>
-      <svg className="background-svg" style={{ animationDelay: `-${delay}ms` }}>
-      </svg>
-      <div className="satellites">
-        <div className="sun" style={{ animationDelay: `-${Math.floor(delay + 64800000)}ms` }}>
-          <svg><circle cx="50" cy="50" r="50"/></svg>
+    <div className="background-container">
+      <div className="background" style={{ animationDelay: `-${delay}ms` }}>
+        <div className="background-svg" >
+          <div className="satellites">
+            <div className="sun" style={{ animationDelay: `-${delay + 64800000}ms` }}>
+              <svg><circle cx="50" cy="50" r="50"/></svg>
+            </div>
+            <div className="moon" style={{ animationDelay: `-${delay + 21600000}ms` }}>
+              <svg><circle cx="50" cy="50" r="50"/></svg>
+            </div>
+          </div>
+          <div className="clouds">
+            {clouds}
+          </div>
         </div>
-        <div className="moon" style={{ animationDelay: `-${Math.floor(delay + 21600000)}ms` }}>
-          <svg><circle cx="50" cy="50" r="50"/></svg>
-        </div>
-      </div>
-      <div className="clouds">
-        {clouds}
       </div>
     </div>
   );
