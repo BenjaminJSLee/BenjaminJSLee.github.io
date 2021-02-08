@@ -95,7 +95,7 @@ $bg-h: 600px;
 
 @keyframes moveX {
   0% {
-    transform: translateX(0px);
+    transform: translateX(-100%);
   }
   100% {
     transform: translateX($bg-w);
