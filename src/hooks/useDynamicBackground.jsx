@@ -58,7 +58,7 @@ const useDynamicBackground = () => {
 
   useEffect(() => {
     const GENERATION_DELAY = 5000;
-    const CLOUDS_TO_GENERATE = 2;
+    const CLOUDS_TO_GENERATE = 1;
     let cloudId = 0;
     setClouds([]);
     const updateClouds = () => {
