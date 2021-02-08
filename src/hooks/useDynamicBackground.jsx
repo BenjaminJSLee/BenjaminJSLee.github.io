@@ -11,14 +11,23 @@ const generateCloud = (id, removeCloud) => {
     (
       <svg 
         xmlns="http://www.w3.org/2000/svg"
-        viewBox='0 0 100 100'
+        viewBox="0 0 200 100"
       >
-        <path d='M 25,60 a 20,20 1 0,0 0,40 h 50 a 20,20 1 0,0 0,-40 a 10,10 1 0,0 -15,-10 a 15,15 1 0,0 -35,10 z' />
+        <path d='M 40, 50 A1,2 90 0,0 40,80 H 160 A5,4 90 0,0 160,50 A3,2 0 0,0 80,50 A2,1 0 0,0 40,50 Z' />
       </svg>
     ),
     (
       <svg 
         xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 200 100"
+      >
+        <path d='M 40,80 H 160 A1,2 90 0,0 140,50 A3,2 0 0,0 60,50 A2,1 0 0,0 40,80 Z' />
+      </svg>
+    ),
+    (
+      <svg 
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 200 100"
       >
         <path d='M 40, 30 A1,2 90 0,0 40,70 H 160 A1,2 90 0,0 160,30 Z' />
       </svg>
