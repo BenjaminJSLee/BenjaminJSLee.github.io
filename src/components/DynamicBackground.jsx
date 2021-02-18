@@ -6,6 +6,8 @@ const DynamicBackground = (props) => {
   const {
     clouds,
     delay,
+    backdrop,
+    satellites,
   } = useDynamicBackground();
 
   return (
@@ -13,12 +15,10 @@ const DynamicBackground = (props) => {
       <div className="background" style={{ animationDelay: `-${delay}ms` }}>
         <div className="background-svg" >
           <div className="satellites">
-            <div className="sun" style={{ animationDelay: `-${delay + 64800000}ms` }}>
-              <svg><circle cx="50" cy="50" r="50"/></svg>
-            </div>
-            <div className="moon" style={{ animationDelay: `-${delay + 21600000}ms` }}>
-              <svg><circle cx="50" cy="50" r="50"/></svg>
-            </div>
+            {satellites}
+          </div>
+          <div className="backdrop">
+            {backdrop}
           </div>
           <div className="clouds">
             {clouds}

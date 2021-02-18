@@ -25,6 +25,30 @@ $bg-h: 600px;
       max-width: $bg-w;
       height: 100%;
       margin: auto;
+      .backdrop {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50%;
+        .city {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .forest {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
       .satellites {
         position: absolute;
         top: 0;

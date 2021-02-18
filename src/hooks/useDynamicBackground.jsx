@@ -52,13 +52,30 @@ const generateCloud = (id, removeCloud) => {
   );
 };
 
-const useDynamicBackground = () => {
+const generateBuilding = (opts = {}) => {
+  const buildings = [
+    (
+      <g>
+        <rect
+          x="0"
+          y="200"
+          width="50"
+          height="100"
+        />
+      </g>
+    ),
+  ];
+  const building = buildings[Math.floor(Math.random() * buildings.length)];
+  return building;
+};
+
+const useDynamicBackground = (options = {}) => {
   const [clouds, setClouds] = useState([]);
   const [delay, setDelay] = useState(getCurrentTime());
 
   useEffect(() => {
-    const GENERATION_DELAY = 5000;
-    const CLOUDS_TO_GENERATE = 1;
+    const GENERATION_DELAY = options.delay || 5000;
+    const CLOUDS_TO_GENERATE = options.clouds || 1;
     let cloudId = 0;
     setClouds([]);
     const updateClouds = () => {
@@ -116,11 +133,39 @@ const useDynamicBackground = () => {
     };
   },[]);
 
+  const satellites = (
+    <>
+      <div className="sun" style={{ animationDelay: `-${delay + (1000 * 60 * 60 * 18)}ms` }}>
+        <svg><circle cx="50" cy="50" r="50"/></svg>
+      </div>
+      <div className="moon" style={{ animationDelay: `-${delay + (1000 * 60 * 60 * 6)}ms` }}>
+        <svg><circle cx="50" cy="50" r="50"/></svg>
+      </div>
+    </>
+  );
+
+  const backdrop = (
+    <>
+      <div className="city">
+        <svg>
+          
+        </svg>
+      </div>
+      <div className="forest">
+        <svg viewBox="0 0 1098 300">
+
+        </svg>
+      </div>
+    </>
+  );
+
   return {
     clouds,
     setClouds,
     delay,
     setDelay,
+    satellites,
+    backdrop,
   };
 };
 export default useDynamicBackground;
