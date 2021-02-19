@@ -52,25 +52,61 @@ const generateCloud = (id, removeCloud) => {
   );
 };
 
-const generateBuilding = (opts = {}) => {
-  const buildings = [
-    (
-      <g>
-        <rect
-          x="0"
-          y="200"
-          width="50"
-          height="100"
-        />
-      </g>
-    ),
-  ];
-  const building = buildings[Math.floor(Math.random() * buildings.length)];
-  return building;
+const generateCity = ({ 
+  width = 1098,
+  height = 300, 
+  dx = () => (Math.floor(Math.random() * 2) + 1) * 25, 
+  dy = () => Math.random() * (height - 100),
+  fill = "#000000",
+  stroke = "#ffffff",
+} = {}) => {
+  let path = `M 0 ${height}`;
+  let x = 0;
+  while (x < width) {
+    const y = dy();
+    const diff = dx();
+    x = x + diff >= width ? width : x + diff;
+    path = `${path} V ${y} H ${x}`;
+  }
+  path = `${path} V ${height} Z`;
+  const city = (
+    <path 
+      d={path} 
+      stroke={stroke}
+      strokeWidth="2px"
+      fill={fill}
+    />
+  )
+
+  return (
+    <g>
+      {city}
+    </g>
+  );
 };
 
 const useDynamicBackground = (options = {}) => {
   const [clouds, setClouds] = useState([]);
+  const [backdrop, setBackdrop] = useState((
+    <>
+      <div className="city">
+        <svg>
+          {
+            generateCity({fill: "#777777"})
+          }
+          {
+            generateCity()
+          }
+        </svg>
+      </div>
+      <div className="forest">
+        <svg>
+          {
+          }
+        </svg>
+      </div>
+    </>
+  ));
   const [delay, setDelay] = useState(getCurrentTime());
 
   useEffect(() => {
@@ -140,21 +176,6 @@ const useDynamicBackground = (options = {}) => {
       </div>
       <div className="moon" style={{ animationDelay: `-${delay + (1000 * 60 * 60 * 6)}ms` }}>
         <svg><circle cx="50" cy="50" r="50"/></svg>
-      </div>
-    </>
-  );
-
-  const backdrop = (
-    <>
-      <div className="city">
-        <svg>
-          
-        </svg>
-      </div>
-      <div className="forest">
-        <svg viewBox="0 0 1098 300">
-
-        </svg>
       </div>
     </>
   );
